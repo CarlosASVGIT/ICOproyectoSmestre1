@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapa Cetys</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="mapa-container">
+        <img class="fondo-mapa" src="{{ url_for('static', filename='images/mapa.png') }}" alt="Mapa de fondo">
+
+        <div class="pin" style="top: 30%; left: 40%;" onclick="clickPin('Punto 1')"></div>
+        <div class="pin" style="top: 55%; left: 65%;" onclick="clickPin('Punto 2')"></div>
+        <div class="pin" style="top: 70%; left: 20%;" onclick="clickPin('Punto 3')"></div>
+    </div>
+
+    <div id="config-menu">
+        <h3>Configuración</h3>
+        <label for="param1">Destino:</label>
+        <select id="param1" onchange="mostrarTipoBano()">
+            <option value="opcion1">Cafeteria</option>
+            <option value="opcion2">Punto de reunion</option>
+            <option value="opcion3">Baño</option>
+        </select>
+
+        <label for="param2">Ruta:</label>
+        <select id="param2">
+            <option value="valorA">Cualquier Ruta</option>
+            <option value="valorB">Sin escaleras</option>
+        </select>
+
+        <div id="param3-container">
+            <label for="param3">Tipo de Baño:</label>
+            <select id="param3">
+                <option value="opcion1">Baño Unisex</option>
+                <option value="opcion2">Baño de Hombres</option>
+                <option value="opcion3">Baño de Mujeres</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        function mostrarTipoBano() {
+            const param1 = document.getElementById('param1').value;
+            const contenedorParam3 = document.getElementById('param3-container');
+            contenedorParam3.style.display = (param1 === 'opcion3') ? 'block' : 'none';
+        }
+
+        function clickPin(nombre) {
+            alert("Presionaste: " + nombre);
+        }
+    </script>
+
+</body>
+</html>
