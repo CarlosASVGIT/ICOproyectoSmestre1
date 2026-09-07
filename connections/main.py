@@ -17,6 +17,7 @@ def main():
 
     calculator = AccessibleRouteCostCalculator() if accessible_only else StandardRouteCostCalculator()
     route = planner.find_route(graph, start, goal_type, calculator)
+    print(start.id," to ",goal_type, "| Accessibility =" ,accessible_only)
 
     if route is None:
         print("No route found.")
