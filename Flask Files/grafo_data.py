@@ -75,10 +75,6 @@ stairs1_b = Node(id="stairs1_b", type="intersection")
 stairs1_t = Node(id="stairs1_t", type="intersection")
 
 #EDIFICIOS
-e2_1 = Node(id="e2_1", type="exit_entrance")
-e2_2 = Node(id="e2_2", type="exit_entrance")
-e1_2 = Node(id="e1_2", type="exit_entrance")
-e1_1 = Node(id="e1_1", type="exit_entrance")
 e8 = Node(id="e8", type="classroom")
 e9_2 =Node(id="e9_2", type="exit_entrance")
 e9_1 = Node(id="e9_1", type="exit_entrance")
@@ -140,10 +136,25 @@ ne4_1 = Node(id="ne4_1", type="intersection")
 ne4_2 = Node(id="ne4_2", type="intersection")
 
 #NODOS ED 9
-bano_f_ed9 = Node(id="bano_f_ed92", type="restroom_f")
-bano_m_ed9  = Node(id="bano_m_ed92", type="restroom_m")
+bano_f_ed9 = Node(id="bano_f_ed9", type="restroom_f")
+bano_m_ed9  = Node(id="bano_m_ed9", type="restroom_m")
 
+#NODOS EDIFICIO 1
+e1_2 = Node(id="e1_2", type="exit_entrance")
+e1_1 = Node(id="e1_1", type="exit_entrance")
+e1_3 = Node(id="e1_3", type="exit_entrance")
+n_e1 = Node(id="n_e1", type="intersection")
+banoM_ed1 = Node(id="banoM_ed1", type="restroom_m")
+banoF_ed1 = Node(id="banoF_ed1", type="restroom_f")
+stairs_e1_t = Node(id="stairs_e1_t", type="intersection")
+stairs_e1_b = Node(id="stairs_e1_b", type="intersection")
 
+#NODOS EDIFICIO 2
+e2_1 = Node(id="e2_1", type="exit_entrance")
+e2_2 = Node(id="e2_2", type="exit_entrance")
+elevador_e2 = Node(id="elevador_e2", type="intersection")
+bano_e2_2m = Node(id="bano_e2_2m", type="restroom_m")
+bano_e2_2f = Node(id="bano_e2_2f", type="restroom_f")
 
 
 
@@ -153,8 +164,11 @@ nodes = [n1, n2, n3, n4, n5,n6, n67,n7,n8, n9,n10,n11,n12,n13,n14,n15,n16,n18,n1
 
         ne4_1, ne4_2, elevador_e4, m_e4, f_e4, floor2_hub_e4, floor3_hub_e4, e4_e, e4b,
 
+        bano_e2_2f, bano_e2_2m,elevador_e2,e2_2,
+
          of1, of2,e_admin,n_admin, bano_admin1, ed9, e9_2, e9_1,
          bano_admin2, idiomas, e5_1, e5_2, e2_1, e1_1, e1_2, e8, e7_2, e7_1, e6,
+        e1_3, n_e1,banoM_ed1, banoF_ed1,stairs_e1_t, stairs_e1_b,
 
         bano_bib2, bano_bib1, bib_entrada, nb1, nb2,
 
@@ -328,7 +342,27 @@ connections = [
 
     #EDIFICIO 9 (no las aulas)
     (ed9, bano_f_ed9, 6, 0, True),
-    (ed9, bano_m_ed9, 6,0 , True)
+    (ed9, bano_m_ed9, 6,0 , True),
+
+    #EDIFICIO 1
+    (n36, stairs_e1_b, 3, 0, False),
+    (stairs_e1_b, stairs_e1_t, 1, 3,False),
+    (stairs_e1_t, e1_3, 2,0, False),
+    (e1_3, e1_2, 20, 0, True),
+    (e1_2, n_e1, 5, 0, True),
+    (n_e1, banoM_ed1, 5, 0, True),
+    (e1_2, banoF_ed1, 5, 0, True),
+    (n_e1, e1_1, 5, 0, True),
+
+    #EDIFICIO 2
+    (e2_1, e2_2, 4, 6, False),
+    (elevador_e2, e2_2, 7, 0, True),
+    (elevador_e2, e2_1, 7, 0, True),
+    (e2_2, bano_e2_2f, 6, 0, True),
+    (e2_2, bano_e2_2m, 6, 0, True),
+
+
+
 
 ]
 
