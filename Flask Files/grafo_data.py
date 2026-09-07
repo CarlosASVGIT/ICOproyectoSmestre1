@@ -18,7 +18,6 @@ n13 = Node(id="n13", type="intersection")
 n14 = Node(id="n14", type="intersection")
 n15 = Node(id="n15", type="intersection")
 n16 = Node(id="n16", type="intersection")
-n17 = Node(id="n17", type="intersection")
 n18 = Node(id="n18", type="intersection")
 n19 = Node(id="n19", type="intersection")
 n20 = Node(id="n20", type="intersection")
@@ -55,7 +54,7 @@ idiomas = Node(id="idiomas", type="classroom")
 e5_1 = Node(id="e5_1", type="exit_entrance")
 e5_2 = Node(id="e5_2", type="exit_entrance")
 e6 = Node(id="e6", type="exit_entrance")
-e9 = Node(id="e9", type="exit_entrance")
+ed9 = Node(id="ed9", type="exit_entrance")
 
 ramp1_b = Node(id="ramp1_bottom", type="intersection")
 ramp1_t = Node(id="ramp1_top", type="intersection")
@@ -81,10 +80,9 @@ e2_2 = Node(id="e2_2", type="exit_entrance")
 e1_2 = Node(id="e1_2", type="exit_entrance")
 e1_1 = Node(id="e1_1", type="exit_entrance")
 e8 = Node(id="e8", type="classroom")
-e9_2 =Node(id="e9", type="exit_entrance")
+e9_2 =Node(id="e9_2", type="exit_entrance")
 e9_1 = Node(id="e9_1", type="exit_entrance")
-e7_1 = Node(id="e7_1", type="exit_entrance")
-e7_2 = Node(id="e7_2", type="exit_entrance")
+
 
 #CAFES
 dvolada = Node(id="dvolada", type="cafe")
@@ -99,8 +97,8 @@ ncafe = Node(id="ncafe", type="intersection")
 bib_entrada = Node(id="bib_entrada", type="exit_entrance")
 nb1 = Node(id="nb1", type="intersection")
 nb2 = Node(id="nb2", type="intersection")
-bano_bib1 = Node(id="bano_bib", type="restroom_unisex")
-bano_bib2 = Node(id="bano_bib", type="restroom_unisex")
+bano_bib1 = Node(id="bano_bib1", type="restroom_unisex")
+bano_bib2 = Node(id="bano_bib2", type="restroom_unisex")
 
 
 
@@ -117,11 +115,46 @@ elevator_cece = Node(id="elevator_cece", type="intersection")
 cece_1 = Node(id="cece_1", type="exit_entrance")
 cece_2 = Node(id="cece_2", type="exit_entrance")
 
-nodes = [n1, n2, n3, n4, n5,n6, n67,n7,n8, n9,n10,n11,n12,n13,n14,n15,n16,n17,n18,n19,
-         n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,n31,n32,n3,n34,n35,n36,n37,n38,n39,n40,
+#NODOS POSGRADO / E7
+e7_1 = Node(id="e7_1", type="exit_entrance")
+e7_2 = Node(id="e7_2", type="exit_entrance")
+floor1_hub_posgrado = Node(id="floor1_hub_posgrado", type="intersection")
+floor2_hub_posgrado = Node(id="floor2_hub_posgrado", type="intersection")
+floor3_hub_posgrado = Node(id="floor3_hub_posgrado", type="intersection")
+elevador_posgrado = Node(id="elevador_posgrado", type="intersection")
+cafe_vertical = Node(id="cafe_vertical", type="cafe")
+m1_7000 = Node(id="m1_7000", type="restroom_m")
+f1_7000 = Node(id="f1_7000", type="restroom_f")
+m2_7000 = Node(id="m2_7000", type="restroom_m")
+f2_7000 = Node(id="f2_7000", type="restroom_f")
 
-         of1, of2,e_admin,n_admin, bano_admin1,
-         bano_admin2, idiomas, e5_1, e5_2, e2_1, e1_1, e8, e7_2, e7_1, e6,
+#NODOS E4
+e4_e = Node(id="e4_e", type="exit_entrance")
+e4b = Node(id="e4b", type="exit_entrance")
+floor2_hub_e4 = Node(id="floor2_hub_e4", type="intersection")
+floor3_hub_e4 = Node(id="floor3_hub_e4", type="intersection")
+m_e4 = Node(id="m_e4", type="restroom_m")
+f_e4 = Node(id="f_e4", type="restroom_f")
+elevador_e4 = Node(id="elevador_e4", type="intersection")
+ne4_1 = Node(id="ne4_1", type="intersection")
+ne4_2 = Node(id="ne4_2", type="intersection")
+
+#NODOS ED 9
+bano_f_ed9 = Node(id="bano_f_ed92", type="restroom_f")
+bano_m_ed9  = Node(id="bano_m_ed92", type="restroom_m")
+
+
+
+
+
+
+nodes = [n1, n2, n3, n4, n5,n6, n67,n7,n8, n9,n10,n11,n12,n13,n14,n15,n16,n18,n19,
+         n20,n21,n22,n23,n24,n25,n26,n27,n28,n29,n30,n31,n32,n33,n34,n35,n36,n37,n38,n39,n40,
+
+        ne4_1, ne4_2, elevador_e4, m_e4, f_e4, floor2_hub_e4, floor3_hub_e4, e4_e, e4b,
+
+         of1, of2,e_admin,n_admin, bano_admin1, ed9, e9_2, e9_1,
+         bano_admin2, idiomas, e5_1, e5_2, e2_1, e1_1, e1_2, e8, e7_2, e7_1, e6,
 
         bano_bib2, bano_bib1, bib_entrada, nb1, nb2,
 
@@ -136,7 +169,10 @@ nodes = [n1, n2, n3, n4, n5,n6, n67,n7,n8, n9,n10,n11,n12,n13,n14,n15,n16,n17,n1
          floor4_hub_cece, floor3_hub_cece, floor2_hub_cece, floor1_hub_cece,
          elevator_cece, m1_cece, f1_cece, unisex1_cece, cafe_cece, cece_1, cece_2,
 
-         PR2, PR1, PR3
+        floor1_hub_posgrado, floor2_hub_posgrado,floor3_hub_posgrado, cafe_vertical,
+        elevador_posgrado,m1_7000, m2_7000, f2_7000, f1_7000,
+
+         PR2, PR1, PR3, bano_m_ed9, bano_f_ed9,
         ]
 
 #conexiones de un nodo a otro, no se tiene que hacer doblemente, en GrafoCETYS se duplican para mantener bidireccionalidad
@@ -168,7 +204,7 @@ connections = [
     (ramp1_t, n4,   4, 0, True),
 
     (n4,of1, 2.5, 0, True),
-
+    (n4,of2, 2.5, 0, True),
 
     (n38, e1_1,15,0,True),
     (n8,ramp5_t,17,0,True),
@@ -193,10 +229,10 @@ connections = [
     (n30,n33, 35,0,True),
     (n30, stairs3_b, 25, 0, False),
     (stairs3_b, stairs3_t, 4, 4, False),
-    stairs3_t, e6, 0.5,0,False,
+    (stairs3_t, e6, 0.5,0,False),
     (n33,n35,15,0,True),
     (n33,n34,25,0,True),
-    (n34, e9, 4, 0, True),
+    (n34, ed9, 4, 0, True),
     (n35,n36,45,0,True),
     (n36,n37,30,0,True),
     (n37,e1_2, 2.3, 0, True),
@@ -261,7 +297,39 @@ connections = [
     (elevator_cece, floor4_hub_cece, 15, 0, True),
     (elevator_cece, floor3_hub_cece, 15, 0, True),
     (elevator_cece, floor2_hub_cece, 15, 0, True),
-    (elevator_cece, floor1_hub_cece, 15, 0, True)
+    (elevator_cece, floor1_hub_cece, 15, 0, True),
+
+    #EDIFICIO POSGRADO
+    (e7_1, floor1_hub_posgrado, 3, 0, True),
+    (e7_2, floor2_hub_posgrado, 3, 0, False),
+    (floor1_hub_posgrado, cafe_vertical, 5, 0, True),
+    (elevador_posgrado, floor1_hub_posgrado, 10, 0, True),
+    (elevador_posgrado, floor2_hub_posgrado, 10, 0, True),
+    (elevador_posgrado, floor3_hub_posgrado, 10, 0, True),
+    (floor1_hub_posgrado, floor2_hub_posgrado, 8, 6, False),
+    (floor2_hub_posgrado, floor3_hub_posgrado, 8, 6, False),
+    (floor1_hub_posgrado, m1_7000, 4, 0, True),
+    (floor1_hub_posgrado, f1_7000, 4, 0, True),
+    (floor3_hub_posgrado, m2_7000, 4, 0, True),
+    (floor3_hub_posgrado, f2_7000, 4, 0, True),
+
+    #EDIFICIO 4000
+    (n30, ne4_1, 8, 0, True),
+    (ne4_1, ne4_2, 10, 0, True),
+    (n33, ne4_2, 8, 0, True),
+    (ne4_1, e4_e, 1,0, True),
+    (ne4_2, e4b, 1, 0, True),
+    (e4_e, floor2_hub_e4, 4,6, False),
+    (e4b, m_e4, 2, 0, True),
+    (e4b, f_e4, 2, 0, True),
+    (floor2_hub_e4, floor3_hub_e4, 4, 6, False),
+    (elevador_e4, floor2_hub_e4, 10, 0, True),
+    (elevador_e4, floor3_hub_e4, 10, 0, True),
+
+    #EDIFICIO 9 (no las aulas)
+    (ed9, bano_f_ed9, 6, 0, True),
+    (ed9, bano_m_ed9, 6,0 , True)
+
 ]
 
 graph = Grafo(nodes=nodes, connections=connections)
