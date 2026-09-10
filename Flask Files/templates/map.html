@@ -1,3 +1,4 @@
+<!-- Ai me ayudo con HTML, para una estructura basica y que llame a las funciones -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,67 +8,71 @@
 </head>
 <body>
 
-    <div class="mapa-container">
-        <img class="fondo-mapa" src="{{ url_for('static', filename='images/mapa.png') }}" alt="Mapa de fondo">
-    </div>
+    <div class="layout">
+        <div class="panel-izquierdo">
+            <div id="config-menu">
+                <h3>Configuración</h3>
 
-    <div id="config-menu">
-        <h3>Configuración</h3>
+                <label for="origen">¿Dónde estás?</label>
+                <select id="origen"></select>
 
-        <label for="origen">¿Dónde estás?</label>
-        <select id="origen"></select>
+                <label for="param1">Destino:</label>
+                <select id="param1" onchange="actualizarDestino()">
+                    <option value="opcion1">Cafeteria</option>
+                    <option value="opcion2">Punto de reunion</option>
+                    <option value="opcion3">Baño</option>
+                    <option value="opcion4">Edificio</option>
+                </select>
 
-        <label for="param1">Destino:</label>
-        <select id="param1" onchange="actualizarDestino()">
-            <option value="opcion1">Cafeteria</option>
-            <option value="opcion2">Punto de reunion</option>
-            <option value="opcion3">Baño</option>
-            <option value="opcion4">Edificio</option>
-        </select>
+                <label for="param2">Ruta:</label>
+                <select id="param2">
+                    <option value="valorA">Cualquier Ruta</option>
+                    <option value="valorB">Sin escaleras</option>
+                </select>
 
-        <label for="param2">Ruta:</label>
-        <select id="param2">
-            <option value="valorA">Cualquier Ruta</option>
-            <option value="valorB">Sin escaleras</option>
-        </select>
+                <div id="param3-container">
+                    <label for="param3">Tipo de Baño:</label>
+                    <select id="param3">
+                        <option value="opcion1">Baño Unisex</option>
+                        <option value="opcion2">Baño de Hombres</option>
+                        <option value="opcion3">Baño de Mujeres</option>
+                    </select>
+                </div>
 
-        <div id="param3-container">
-            <label for="param3">Tipo de Baño:</label>
-            <select id="param3">
-                <option value="opcion1">Baño Unisex</option>
-                <option value="opcion2">Baño de Hombres</option>
-                <option value="opcion3">Baño de Mujeres</option>
-            </select>
+                <div id="param4-container">
+                    <label for="param4">Edificio Destino:</label>
+                    <select id="param4">
+                        <option value="opcion1">CECE</option>
+                        <option value="opcion2">Posgrado</option>
+                        <option value="opcion3">Edificio 8</option>
+                         <option value="opcion4">Edificio 1</option>
+                        <option value="opcion5">Edificio 2</option>
+                        <option value="opcion6">Edificio 4</option>
+                         <option value="opcion7">Edificio 5</option>
+                        <option value="opcion8">Edificio de Administracion</option>
+                        <option value="opcion9">Idiomas</option>
+                        <option value="opcion10">Cafeteria</option>
+                        <option value="opcion11">Oficina 1</option>
+                        <option value="opcion12">Oficina 2</option>
+                        <option value="opcion13">Biblioteca</option>
+                        <option value="opcion14">Aulas 9000 - 1</option>
+                        <option value="opcion15">Aulas 9000 - 2</option>
+                        <option value="opcion16">Edificio 9</option>
+                    </select>
+                </div>
+
+                <button id="btn-buscar-cercano" onclick="buscarMasCercano()">Buscar más cercano</button>
+            </div>
+
+            <div id="resultado-ruta" style="display:none;">
+                <h3>Ruta encontrada</h3>
+                <ol id="lista-pasos"></ol>
+            </div>
         </div>
 
-        <div id="param4-container">
-            <label for="param4">Edificio Destino:</label>
-            <select id="param4">
-                <option value="opcion1">CECE</option>
-                <option value="opcion2">Posgrado</option>
-                <option value="opcion3">Edificio 8</option>
-                 <option value="opcion4">Edificio 1</option>
-                <option value="opcion5">Edificio 2</option>
-                <option value="opcion6">Edificio 4</option>
-                 <option value="opcion7">Edificio 5</option>
-                <option value="opcion8">Edificio de Administracion</option>
-                <option value="opcion9">Idiomas</option>
-                <option value="opcion10">Cafeteria</option>
-                <option value="opcion11">Oficina 1</option>
-                <option value="opcion12">Oficina 2</option>
-                <option value="opcion13">Biblioteca</option>
-                <option value="opcion14">Aulas 9000 - 1</option>
-                <option value="opcion15">Aulas 9000 - 2</option>
-                <option value="opcion16">Edificio 9</option>
-            </select>
+        <div class="mapa-container">
+            <img class="fondo-mapa" src="{{ url_for('static', filename='images/mapa.png') }}" alt="Mapa de fondo">
         </div>
-
-        <button id="btn-buscar-cercano" onclick="buscarMasCercano()">Buscar más cercano</button>
-    </div>
-
-    <div id="resultado-ruta" style="display:none;">
-        <h3>Ruta encontrada</h3>
-        <ol id="lista-pasos"></ol>
     </div>
 
     <script>

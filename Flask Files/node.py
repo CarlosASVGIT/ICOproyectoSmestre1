@@ -10,4 +10,5 @@ class Node:
     type: Literal["classroom", "restroom_m", "restroom_f", "restroom_unisex",
     "cafe", "meeting_point", "intersection", "exit_entrance", "posgrado", "CECE", "e8",
     "e1", "e2", "e4", "admin", "idiomas", "of1", "of2", "biblio", "9000-1", "9000-2", "e9", "e5", "e6"]
+    name: str
 

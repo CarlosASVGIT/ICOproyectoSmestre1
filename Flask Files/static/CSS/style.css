@@ -1,4 +1,4 @@
-/* ===== Reset básico ===== */
+/* AI me dio este archivo CSS para acomodar el layout */
 html, body {
     margin: 0;
     padding: 0;
@@ -10,10 +10,27 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.layout {
+    display: flex;
+    align-items: stretch;
+    height: 100vh;
+}
+
+.panel-izquierdo {
+    flex: 0 0 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+}
+
 /* ===== Contenedor del mapa ===== */
 .mapa-container {
     position: relative;
-    width: 100vw;
+    flex: 1;
     height: 100vh;
 }
 
@@ -23,20 +40,12 @@ body {
     object-fit: contain;
 }
 
-
-
-/* ===== Menú de configuración ===== */
 #config-menu {
-    position: fixed;
-    top: 15px;
-    right: 15px;
     background: #ffffff;
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-    min-width: 180px;
 }
 
 #config-menu h3 {
@@ -58,13 +67,34 @@ body {
     margin-top: 3px;
     border-radius: 4px;
     border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-/* ===== Tercer menú (Tipo de Baño) - oculto por defecto ===== */
 #param3-container {
     display: none;
 }
 
 #param4-container {
     display: none;
+}
+
+#resultado-ruta {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+#resultado-ruta h3 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+#resultado-ruta ol {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13px;
+    color: #333;
 }

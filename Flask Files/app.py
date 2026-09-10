@@ -33,7 +33,7 @@ def buscar_mas_cercano():
         return jsonify({"error": "No se encontró una ruta"}), 404 #AI me ayudo con los archivos json, yo realice la logica
 
     return jsonify({
-        "camino": [node.id for node in path]
+        "camino": [node.name for node in path]
     })
 
 app.run(debug=True)
