@@ -1,4 +1,5 @@
 from node import Node
+from node import Node
 from edge import Edge
 
 class Grafo:

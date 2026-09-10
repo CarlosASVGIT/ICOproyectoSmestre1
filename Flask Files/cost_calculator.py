@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
-from edge import Edge
+from node import Node
 from typing import Optional
+from edge import Edge
 
 class RouteCostCalculator(ABC):
     @abstractmethod

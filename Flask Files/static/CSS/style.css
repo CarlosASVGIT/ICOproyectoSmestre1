@@ -23,23 +23,7 @@ body {
     object-fit: contain;
 }
 
-/* ===== Pins (puntos presionables) ===== */
-.pin {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    border: 2px solid white;
-    border-radius: 50%;
-    cursor: pointer;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-    transition: transform 0.15s ease;
-}
 
-.pin:hover {
-    transform: translate(-50%, -50%) scale(1.3);
-}
 
 /* ===== Menú de configuración ===== */
 #config-menu {
@@ -78,5 +62,9 @@ body {
 
 /* ===== Tercer menú (Tipo de Baño) - oculto por defecto ===== */
 #param3-container {
+    display: none;
+}
+
+#param4-container {
     display: none;
 }
