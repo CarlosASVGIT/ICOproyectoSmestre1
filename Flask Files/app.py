@@ -6,10 +6,10 @@ from grafo_data import graph
 app = Flask(__name__)
 planner = Planner()
 
-
 @app.route('/')
 def mapa():
     return render_template('map.html')
+
 
 @app.route('/buscar_mas_cercano', methods=['POST'])
 def buscar_mas_cercano():

@@ -6,7 +6,6 @@ import heapq
 from typing import Optional
 
 def build_path(parent: dict[Node, Optional[Node]], goal: Node) -> list[Node]:
-    """Reconstructs the path."""
     path = [goal]
     while parent[path[-1]] is not None:
         path.append(parent[path[-1]])
